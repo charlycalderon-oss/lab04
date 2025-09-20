@@ -47,7 +47,7 @@ fun ImageWithDescription(modifier: Modifier = Modifier) {
             contentDescription = "Imagen del laboratorio"
         )
         Text(
-            text = "Esta es la descripción de la imagen",
+            text = "Descripción modificada en ramaB",
             fontSize = 18.sp
         )
     }
