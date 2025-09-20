@@ -30,6 +30,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     ImageWithDescription(modifier = Modifier.padding(innerPadding))
                     ButtonExample()
+                    WelcomeText()
                 }
             }
         }
@@ -58,6 +59,12 @@ fun ButtonExample() {
     }
 }
 
+@Composable
+fun WelcomeText() {
+    Text(text = "¡Bienvenido al laboratorio 04!")
+}
+
+
 @Preview(showBackground = true)
 @Composable
 fun ImageWithDescriptionPreview() {
@@ -71,6 +78,14 @@ fun ImageWithDescriptionPreview() {
 fun ButtonExamplePreview() {
     Lab04Theme {
         ButtonExample()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun WelcomeTextPreview() {
+    Lab04Theme {
+        WelcomeText()
     }
 }
 
