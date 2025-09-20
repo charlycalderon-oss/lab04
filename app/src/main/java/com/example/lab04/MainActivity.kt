@@ -46,7 +46,10 @@ fun ImageWithDescription(modifier: Modifier = Modifier) {
             painter = painterResource(id = R.drawable.monorico),
             contentDescription = "Imagen del laboratorio"
         )
-        Text(text = "Esta es la descripción de la imagen")
+        Text(
+            text = "Esta es la descripción de la imagen",
+            fontSize = 18.sp
+        )
     }
 }
 
