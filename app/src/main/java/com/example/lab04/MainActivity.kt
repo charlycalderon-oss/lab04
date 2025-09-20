@@ -8,9 +8,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -24,6 +29,7 @@ class MainActivity : ComponentActivity() {
             Lab04Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     ImageWithDescription(modifier = Modifier.padding(innerPadding))
+                    ButtonExample()
                 }
             }
         }
@@ -41,6 +47,17 @@ fun ImageWithDescription(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun ButtonExample() {
+    var message by remember { mutableStateOf("Presiona el botón") }
+    Column {
+        Text(text = message)
+        Button(onClick = { message = "¡Botón presionado!" }) {
+            Text("Presióname")
+        }
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun ImageWithDescriptionPreview() {
@@ -48,6 +65,15 @@ fun ImageWithDescriptionPreview() {
         ImageWithDescription()
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun ButtonExamplePreview() {
+    Lab04Theme {
+        ButtonExample()
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
